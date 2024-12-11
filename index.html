@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Herzen Animation</title>
+  <link rel="stylesheet" href="code.css">
+</head>
+<body>
+<div class="container">
+  <!-- Der Hauptbutton -->
+  <button id="glowButton" class="glow-on-hover" onclick="createHearts()">Drück mich</button>
+
+  <!-- Nachricht "Ich liebe dich" mit Rahmen -->
+  <p id="message"></p>
+
+  <div id="lovePopup" class="popup" style="display: none;">
+    <p>Ich liebe dich auch! ❤️</p>
+    <button onclick="closePopup()">Schließen</button>
+  </div>
+
+  <!-- Frage und Antwortmöglichkeiten -->
+  <div id="question" style="display: none;">
+    <p>Liebst du mich auch?</p>
+    <button id="yesButton" onclick="showLoveMessage()">Ja</button>
+    <button id="noButton">Nein</button>
+  </div>
+</div>
+
+<!-- Verlinkung der JavaScript-Datei -->
+<script src="script.js"></script>
+</body>
+</html>

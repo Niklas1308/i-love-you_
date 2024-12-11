@@ -1,0 +1,229 @@
+/* Vollbild-Hintergrund */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #ff9a9e, #fad0c4, #fbc2eb);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Animation für den Hintergrund */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container für den Button und die Nachricht */
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* "Drück mich"-Button mit schillerndem Effekt */
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
+    animation: buttonGlow 3s infinite;
+}
+
+/* Animation für den Button-Farbverlauf */
+@keyframes buttonGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.glow-on-hover:hover {
+    color: #111;
+    background: linear-gradient(45deg, #fad0c4, #ff9a9e, #a18cd1, #fbc2eb);
+    background-size: 400% 400%;
+    animation: buttonGlowHover 3s infinite;
+}
+
+@keyframes buttonGlowHover {
+    0% { background-position: 50% 100%; }
+    50% { background-position: 0% 50%; }
+    100% { background-position: 50% 100%; }
+}
+
+/* Stil für die Nachricht */
+#message {
+    font-size: 24px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+    padding: 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Frage und Antwort */
+#question p {
+    font-size: 24px;
+    margin: 20px 0;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Georgia', serif;
+}
+
+/* Buttons für die Frage */
+#yesButton, #noButton {
+    padding: 12px 24px;
+    font-size: 18px;
+    margin: 5px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+#yesButton {
+    background: linear-gradient(45deg, #4caf50, #8bc34a);
+    color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#yesButton:hover {
+    background: linear-gradient(45deg, #388e3c, #689f38);
+    transform: scale(1.1);
+}
+
+#noButton {
+    background: linear-gradient(45deg, #f44336, #e57373);
+    color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    position: absolute;
+}
+
+#noButton:hover {
+    background: linear-gradient(45deg, #d32f2f, #c62828);
+    transform: scale(1.1);
+}
+
+/* Herzen leicht sichtbar und nach oben schwebend */
+.heart {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(255, 0, 0, 0.2);
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    animation: flyUp 5s linear infinite;
+}
+
+.heart::before, .heart::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(255, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50%;
+    left: 0;
+}
+
+.heart::after {
+    left: -50%;
+    top: 0;
+}
+
+/* Animation der Herzen */
+@keyframes flyUp {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.2;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Popup verschönern */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #fff;
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    animation: popupShow 0.5s ease-out;
+    z-index: 1000; /* Stellt sicher, dass es vor allem anderen liegt */
+}
+
+/* Animation für das Erscheinen des Popups */
+@keyframes popupShow {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Schließen-Button im Popup */
+.popup button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.popup button:hover {
+    background: #d32f2f;
+}
+
+

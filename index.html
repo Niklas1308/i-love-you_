@@ -1,33 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Herzen Animation</title>
-  <link rel="stylesheet" href="code.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentinstagskarte</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-  <!-- Der Hauptbutton -->
-  <button id="glowButton" class="glow-on-hover" onclick="createHearts()">Drück mich</button>
+    <div class="card" id="card">
+        <div class="card-front">
+            <span class="corner-text">Für Julia</span>
+        </div>
+        <div class="card-inside">
+            <p>Will you be my Valentine?</p>
+            <div class="buttons">
+                <button onclick="answerYes()">Ja 💖</button>
+                <button onclick="answerNo()">Nein 😢</button>
+            </div>
+        </div>
+    </div>
 
-  <!-- Nachricht "Ich liebe dich" mit Rahmen -->
-  <p id="message"></p>
-
-  <div id="lovePopup" class="popup" style="display: none;">
-    <p>Ich liebe dich auch! ❤️</p>
-    <button onclick="closePopup()">Schließen</button>
-  </div>
-
-  <!-- Frage und Antwortmöglichkeiten -->
-  <div id="question" style="display: none;">
-    <p>Liebst du mich auch?</p>
-    <button id="yesButton" onclick="showLoveMessage()">Ja</button>
-    <button id="noButton">Nein</button>
-  </div>
-</div>
-
-<!-- Verlinkung der JavaScript-Datei -->
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

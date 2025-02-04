@@ -1,1 +1,152 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffebee;
+    font-family: "Roboto Mono", monospace;
+    overflow: hidden;
+}
 
+/* Briefumschlag */
+#envelope {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 650px; /* Viel größer */
+    height: 400px; /* Viel größer */
+    background-color: #F64F47;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: top 1.5s ease-in-out;
+    cursor: pointer; /* Zeigt an, dass der Umschlag klickbar ist */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Leicht abgerundete Ecken */
+}
+
+/* Text auf dem Briefumschlag */
+.envelope-text {
+    font-family: "Pacifico", cursive; /* Schriftart "Pacifico" */
+    font-size: 2rem; /* Kleinere Schriftgröße */
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Karte */
+.card {
+    background-color: #fff;
+    padding: 80px;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 500px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: relative;
+    z-index: 1;
+}
+
+.text {
+    margin-top: -40px;
+}
+
+.text p {
+    margin: 2px 0;
+    font-size: 3rem;
+    color: #e91e63;
+    font-weight: 500;
+    text-align: left;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+button {
+    border: none;
+    padding: 15px 40px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #e91e63;
+    color: white;
+    flex: none;
+}
+
+button.no {
+    background-color: #f8bbd0;
+    color: #e91e63;
+}
+
+button.yes:hover {
+    background-color: #c2185b;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button.no:hover {
+    background-color: #f48fb1;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+#gif-container {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    margin-top: 20px;
+}
+
+#gif-container.fade-in {
+    opacity: 1;
+}
+
+#gif-container img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+#gif-container p {
+    font-size: 2rem;
+    color: #e91e63;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Popup-Stil */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #FFFFF0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    z-index: 1000;
+}
+
+.popup p {
+    font-size: 1.5rem;
+    color: #e91e63;
+    margin: 0;
+}
